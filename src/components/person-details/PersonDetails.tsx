@@ -4,7 +4,7 @@ import { Person } from "@/utils/common/person";
 import { Button } from "@/components/Button";
 import { usePersonDetails } from "@/components/person-details/usePersonDetails";
 import { PersonCard } from "@/components/person-details/PersonCard/PersonCard";
-import { PersonErrorMessage } from "@/components/person-details/PersonCard/PersonErrorMessage";
+import { ErrorMessage } from "@/components/ErrorMessage";
 
 export const PersonDetails: FunctionComponent = () => {
   const { data, selectedPerson, isLoading, error, onPersonSelect } =
@@ -25,7 +25,7 @@ export const PersonDetails: FunctionComponent = () => {
         )}
       >
         {error ? (
-          <PersonErrorMessage error={error} />
+          <ErrorMessage error={error} />
         ) : (
           <PersonCard
             data={data}

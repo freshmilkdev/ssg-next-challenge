@@ -3,9 +3,9 @@ import { FunctionComponent, PropsWithChildren } from "react";
 type Props = {
   error: Error;
 };
-export const PersonErrorMessage: FunctionComponent<
-  PropsWithChildren<Props>
-> = ({ error }) => {
+export const ErrorMessage: FunctionComponent<PropsWithChildren<Props>> = ({
+  error,
+}) => {
   return (
     <div
       className="w-full mx-4 flex items-center p-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800"
