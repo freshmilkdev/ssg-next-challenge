@@ -1,4 +1,5 @@
 import { FunctionComponent, PropsWithChildren } from "react";
+import { Counter } from "@/components/person-details/PersonCard/Counter";
 
 type Props = {
   isLoading: boolean;
@@ -18,7 +19,11 @@ export const CardItem: FunctionComponent<PropsWithChildren<Props>> = ({
     </div>
   ) : (
     <div className="ml-2 min-h-12 flex flex-col justify-aroundspace-y-0.5">
-      <div>{title}</div>
+      {Number.isInteger(title) ? (
+        <Counter from={0} to={+title} />
+      ) : (
+        <div>{title}</div>
+      )}
       <div className="text-sm text-gray-500 dark:text-gray-400">{subTitle}</div>
     </div>
   );
