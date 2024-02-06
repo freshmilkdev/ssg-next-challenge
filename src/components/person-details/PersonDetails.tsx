@@ -34,7 +34,7 @@ export const PersonDetails: FunctionComponent = () => {
           />
         )}
       </div>
-      <div className={classNames("grid grid-cols-2 gap-2 w-full")}>
+      <div className={classNames("grid grid-cols-3 gap-2 w-full")}>
         {Object.values(Person).map((person) => (
           <Button
             key={person}

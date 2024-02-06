@@ -1,5 +1,4 @@
 import { useQuery } from "@tanstack/react-query";
-import { Person } from "@/utils/common/person";
 import { PersonType } from "@/types";
 
 const fetchPersonDetails = async (person: PersonType, signal: any) => {
