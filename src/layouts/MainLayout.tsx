@@ -1,4 +1,4 @@
-import { FunctionComponent, PropsWithChildren } from "react";
+import { FunctionComponent, PropsWithChildren, ReactNode } from "react";
 import { Inter } from "next/font/google";
 import classNames from "classnames";
 import { Button } from "@/components/Button";
@@ -6,11 +6,13 @@ import { Person } from "@/utils/common/person";
 
 const inter = Inter({ subsets: ["latin"] });
 
-type MainLayoutProps = {};
+type MainLayoutProps = {
+  children: ReactNode;
+};
 
 export const MainLayout: FunctionComponent<
   PropsWithChildren<MainLayoutProps>
-> = () => {
+> = ({ children }) => {
   return (
     <main
       className={classNames(
@@ -19,12 +21,7 @@ export const MainLayout: FunctionComponent<
         "flex flex-col justify-center items-center",
       )}
     >
-      <div className={classNames("flex gap-2")}>
-        {Object.values(Person).map((person) => (
-          <Button key={person}>{person}</Button>
-        ))}
-        <button />
-      </div>
+      {children}
     </main>
   );
 };
