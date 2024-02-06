@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 import { FunctionComponent, PropsWithChildren } from "react";
 import { User } from "@/pages/api/person";
 import { CardItem } from "@/components/person-details/PersonCard/CardItem";
@@ -23,7 +24,12 @@ export const PersonCard: FunctionComponent<PropsWithChildren<Props>> = ({
   const { backgroundImageUrl, profilePictureUrl, name, title, metrics } =
     data || {};
   return (
-    <>
+    <motion.div
+      key={isLoading.toString()}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: isLoading ? 0 : 1 }}
+    >
       <CardBackground isLoading={isLoading} url={backgroundImageUrl} />
       <figure className="p-4">
         <figcaption className="flex items-center justify-between font-medium dark:text-white">
@@ -41,6 +47,6 @@ export const PersonCard: FunctionComponent<PropsWithChildren<Props>> = ({
           />
         </figcaption>
       </figure>
-    </>
+    </motion.div>
   );
 };
