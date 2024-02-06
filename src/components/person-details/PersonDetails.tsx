@@ -4,7 +4,8 @@ import { Button } from "@/components/Button";
 import { usePersonDetails } from "@/components/person-details/usePersonDetails";
 
 export default function PersonDetails() {
-  const { selectedPerson, onPersonSelect } = usePersonDetails();
+  const { selectedPerson, person, isLoading, error, onPersonSelect } =
+    usePersonDetails();
 
   return (
     <div className={classNames("flex gap-2")}>

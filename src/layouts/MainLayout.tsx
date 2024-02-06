@@ -1,10 +1,11 @@
 import { FunctionComponent, PropsWithChildren, ReactNode } from "react";
 import { Inter } from "next/font/google";
 import classNames from "classnames";
-import { Button } from "@/components/Button";
-import { Person } from "@/utils/common/person";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const queryClient = new QueryClient();
 
 type MainLayoutProps = {
   children: ReactNode;
@@ -21,7 +22,7 @@ export const MainLayout: FunctionComponent<
         "flex flex-col justify-center items-center",
       )}
     >
-      {children}
+      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
     </main>
   );
 };
