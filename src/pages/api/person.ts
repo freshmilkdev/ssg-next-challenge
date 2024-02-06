@@ -5,7 +5,7 @@ function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-type User = {
+export type User = {
   backgroundImageUrl: string;
   profilePictureUrl: string;
   name: string;
