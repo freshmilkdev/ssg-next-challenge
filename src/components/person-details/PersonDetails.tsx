@@ -44,7 +44,7 @@ export const PersonDetails: FunctionComponent = () => {
             {person}
           </Button>
         ))}
-        <button />
+        {/*<button />*/}
       </div>
     </div>
   );
