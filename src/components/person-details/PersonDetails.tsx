@@ -7,7 +7,8 @@ import { PersonCard } from "@/components/person-details/PersonCard/PersonCard";
 import { PersonErrorMessage } from "@/components/person-details/PersonCard/PersonErrorMessage";
 
 export const PersonDetails: FunctionComponent = () => {
-  const { data, person, isLoading, error, onPersonSelect } = usePersonDetails();
+  const { data, selectedPerson, isLoading, error, onPersonSelect } =
+    usePersonDetails();
   return (
     <div
       className={classNames(
@@ -26,12 +27,20 @@ export const PersonDetails: FunctionComponent = () => {
         {error ? (
           <PersonErrorMessage error={error} />
         ) : (
-          <PersonCard data={data} person={person} isLoading={isLoading} />
+          <PersonCard
+            data={data}
+            person={selectedPerson}
+            isLoading={isLoading}
+          />
         )}
       </div>
       <div className={classNames("flex gap-2")}>
         {Object.values(Person).map((person) => (
-          <Button key={person} onClick={() => onPersonSelect(person)}>
+          <Button
+            key={person}
+            onClick={() => onPersonSelect(person)}
+            isLoading={isLoading && person === selectedPerson}
+          >
             {person}
           </Button>
         ))}

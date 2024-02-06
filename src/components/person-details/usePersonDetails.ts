@@ -10,7 +10,7 @@ export const usePersonDetails = () => {
   return {
     isLoading: isLoading || isFetching,
     data,
-    person,
+    selectedPerson: person,
     error,
     onPersonSelect: handlePerson,
   };
