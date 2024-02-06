@@ -8,6 +8,8 @@ export const CardBackground: FunctionComponent<PropsWithChildren<Props>> = ({
   isLoading,
   url,
 }) => {
+  //I didn't use `<Image />` from `next/image` because optimization will not work since
+  // we're loading these images on a client side
   return (
     <div className="flex items-center justify-center w-full h-56 sm:h-60 overflow-hidden bg-gray-300 rounded-t-lg dark:bg-gray-700">
       {isLoading ? (
