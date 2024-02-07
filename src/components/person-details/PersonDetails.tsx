@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { FunctionComponent } from "react";
 import { usePersonDetails } from "@/components/person-details/usePersonDetails";
-import { PersonCard } from "@/components/person-details/PersonCard/PersonCard";
+import { PersonCard } from "@/components/person-details/person-card/PersonCard";
 import { ErrorMessage } from "@/components/ErrorMessage";
 import { PersonButtons } from "@/components/person-details/PersonButtons";
 import { useGetPersonDetails } from "@/utils/react-query/person/queries";

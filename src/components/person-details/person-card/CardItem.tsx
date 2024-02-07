@@ -1,5 +1,5 @@
 import { FunctionComponent, PropsWithChildren } from "react";
-import { Counter } from "@/components/person-details/PersonCard/Counter";
+import { Counter } from "@/components/person-details/person-card/Counter";
 
 type Props = {
   isLoading: boolean;

@@ -2,10 +2,10 @@
 import { motion } from "framer-motion";
 import { FunctionComponent, PropsWithChildren } from "react";
 import { User } from "@/pages/api/person";
-import { CardItem } from "@/components/person-details/PersonCard/CardItem";
-import { CardBackground } from "@/components/person-details/PersonCard/CardBackground";
-import { CardAvatar } from "@/components/person-details/PersonCard/CardAvatar";
-import { DefaultMessage } from "@/components/person-details/PersonCard/DefaultMessage";
+import { CardItem } from "@/components/person-details/person-card/CardItem";
+import { CardBackground } from "@/components/person-details/person-card/CardBackground";
+import { CardAvatar } from "@/components/person-details/person-card/CardAvatar";
+import { DefaultMessage } from "@/components/person-details/person-card/DefaultMessage";
 import { PersonType } from "@/types";
 
 type Props = {
